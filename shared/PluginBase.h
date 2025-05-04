@@ -21,7 +21,6 @@
 #include "Pattern.h"
 #include "EventList.h" // TODO: decide if we need it here
 #include "DynAddress.h"
-#include "Maths.h"
 
 namespace plugin {
 

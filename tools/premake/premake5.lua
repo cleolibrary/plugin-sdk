@@ -120,6 +120,7 @@ function pluginSdkStaticLibProject(projectName, sdkdir, outName, isPluginProject
 	end
     characterset "MBCS"
     staticruntime "On"	
+	cppdialect "C++17"
 	
     local projectPath = (sdkdir .. "\\" .. projectName)
     
@@ -127,11 +128,8 @@ function pluginSdkStaticLibProject(projectName, sdkdir, outName, isPluginProject
         if winxp then
             defines "_USING_V110_SDK71_"
             buildoptions { "/Zc:threadSafeInit-" }
-			cppdialect "C++17"
-		else	
-			cppdialect "C++latest"
         end
-        defines { "_CRT_SECURE_NO_WARNINGS", "_CRT_NON_CONFORMING_SWPRINTFS", "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING" }
+        defines { "_CRT_SECURE_NO_WARNINGS", "_CRT_NON_CONFORMING_SWPRINTFS", "_USE_MATH_DEFINES", "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING" }
         buildoptions { "/sdl-" }
         disablewarnings "4073"
     end
@@ -226,16 +224,8 @@ function pluginSdkStaticLibProject(projectName, sdkdir, outName, isPluginProject
             (sdkdir .. "\\shared\\**.cpp"),
 			(sdkdir .. "\\shared\\**.rc"),
 			(sdkdir .. "\\hooking\\**.cpp"),
-			(sdkdir .. "\\hooking\\**.h"),
-			(sdkdir .. "\\injector\\**.hpp"),
-			(sdkdir .. "\\safetyhook\\**.cpp"),
-			(sdkdir .. "\\safetyhook\\**.hpp"),
-			(sdkdir .. "\\safetyhook\\**.c"),
+			(sdkdir .. "\\hooking\\**.h")
         }
-		
-		includedirs {
-			(sdkdir .. "\\safetyhook"),
-		}
         
         vpaths {
             ["shared/*"] = (projectFile(sdkdir, "shared\\**.*")),
@@ -550,8 +540,8 @@ function pluginSdkExampleProject(projectName, projectType, gameSa, gameVc, game3
     characterset ("MBCS")
     staticruntime "On"
     flags { "NoImportLib" }
-	cppdialect "C++latest"
-	defines { "_CRT_SECURE_NO_WARNINGS" }
+	cppdialect "C++17"
+	defines { "_CRT_SECURE_NO_WARNINGS", "_CRT_NON_CONFORMING_SWPRINTFS", "_USE_MATH_DEFINES", "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING" }
 
     if msbuild then
         if winxp then
