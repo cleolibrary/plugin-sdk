@@ -11,12 +11,12 @@
 #include "CAESound.h"
 
 enum eAudioPedType {
-    PED_TYPE_GEN = 0,
-    PED_TYPE_EMG = 1,
-    PED_TYPE_PLAYER = 2,
-    PED_TYPE_GANG = 3,
-    PED_TYPE_GFD = 4,
-    PED_TYPE_SPC = 5
+    PEDTYPE_GEN = 0,
+    PEDTYPE_EMG = 1,
+    PEDTYPE_PLAYER = 2,
+    PEDTYPE_GANG = 3,
+    PEDTYPE_GFD = 4,
+    PEDTYPE_SPC = 5
 };
 
 

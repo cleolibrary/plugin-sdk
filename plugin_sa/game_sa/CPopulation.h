@@ -122,9 +122,9 @@ public:
     static bool IsSunbather(int modelIndex);
     // returns false
     static bool CanSolicitPlayerOnFoot(int modelIndex);
-    // returns true if ped type is PED_TYPE_PROSTITUTE
+    // returns true if ped type is PEDTYPE_PROSTITUTE
     static bool CanSolicitPlayerInCar(int modelIndex);
-    // returns true if ped type is PED_TYPE_CIVMALE
+    // returns true if ped type is PEDTYPE_CIVMALE
     static bool CanJeerAtStripper(int modelIndex);
     static void PlaceGangMembers(ePedType pedType, int arg1, CVector const& posn);
     static void LoadSpecificDriverModelsForCar(int carModelIndex);
