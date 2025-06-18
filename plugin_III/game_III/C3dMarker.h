@@ -15,6 +15,7 @@ class PLUGIN_API C3dMarker {
     PLUGIN_NO_DEFAULT_CONSTRUCTION(C3dMarker)
 
 public:
+bug
     CMatrix m_mMat;
     RpAtomic *m_pAtomic;
     RpMaterial *m_pMaterial;
