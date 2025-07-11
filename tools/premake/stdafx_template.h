@@ -9,7 +9,6 @@
     #include <cstddef>
     #include <cstdint>
     #include <cstdio>
-    #include <expected>
     #include <functional>
     #include <limits>
     #include <list>

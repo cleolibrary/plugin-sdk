@@ -228,6 +228,8 @@ void DoRwStuffEndOfFrame() {
     plugin::Call<0x53D840>();
 }
 
+#ifndef RW
 RsEventStatus RsEventHandler(RsEvent event, void* param) {
     return plugin::CallAndReturnDyn<RsEventStatus>(0x619B60, event, param);
 }
+#endif

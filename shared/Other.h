@@ -12,6 +12,10 @@
 #include <random>
 #include <limits>
 
+#ifndef PI
+#define PI 3.14159265358979323846
+#endif
+
 #ifdef _WIN32
 extern "C" {
     __declspec(dllimport) void* __stdcall GetStdHandle(unsigned long nStdHandle);

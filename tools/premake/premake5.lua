@@ -140,9 +140,9 @@ function pluginSdkStaticLibProject(projectName, sdkdir, outName, isPluginProject
             buildoptions { "/Zc:threadSafeInit-" }
             cppdialect "C++17"
         else
-            cppdialect "C++latest"
+            cppdialect "C++17"
         end
-        defines { "_CRT_NON_CONFORMING_SWPRINTFS", "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING" }
+        defines { "_CRT_NON_CONFORMING_SWPRINTFS", "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING", "NOMINMAX" }
         buildoptions { "/sdl-" }
         flags "MultiProcessorCompile"
         disablewarnings "4073" -- "initializers put in library initialization area"
@@ -412,6 +412,8 @@ function getExamplePluginDefines(projName, game, projectType, laSupport, d3dSupp
             counter = counter + 1
         end
         aryDefines[counter] = "_CRT_NON_CONFORMING_SWPRINTFS"
+        counter = counter + 1
+        aryDefines[counter] = "NOMINMAX"
         counter = counter + 1
     end
     aryDefines[counter] = game
